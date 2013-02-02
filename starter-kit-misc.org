@@ -87,6 +87,7 @@ ido-mode is like magic pixie dust!
         ido-max-prospects 10))
 #+end_src
 
+
 ** Other, spell checking, tabs, imenu and a coding hook
 #+begin_src emacs-lisp 
   (set-default 'indent-tabs-mode nil)
@@ -94,7 +95,7 @@ ido-mode is like magic pixie dust!
   (set-default 'imenu-auto-rescan t)
   
   (add-hook 'text-mode-hook 'turn-on-auto-fill)
-  (add-hook 'text-mode-hook 'turn-on-flyspell)
+  ;;(add-hook 'text-mode-hook 'turn-on-flyspell)
   
   (defvar starter-kit-coding-hook nil
     "Hook that gets run on activation of any programming mode.")

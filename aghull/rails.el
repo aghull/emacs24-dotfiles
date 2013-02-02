@@ -7,7 +7,8 @@
 ;; html+erb
 (add-to-list 'load-path (concat starter-kit-dir "vendor/nxhtml/util"))
 (require 'mumamo-fun)
-(setq mumamo-chunk-coloring 'submode-colored)
+(setq mumamo-chunk-coloring 'submode-colored
+      mumamo-background-colors nil)
 (add-to-list 'auto-mode-alist '("\\.rhtml\\'" . eruby-html-mumamo))
 (add-to-list 'auto-mode-alist '("\\.html\\.erb\\'" . eruby-html-mumamo))
 
