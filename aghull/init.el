@@ -1,10 +1,8 @@
 (starter-kit-load "misc-recommended")
 (starter-kit-load "org")
 (starter-kit-load "js")
-(starter-kit-load "ruby")
-(add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
 (require 'flymake-cursor)
+(require 'auto-complete)
 (global-auto-complete-mode t)
 
 ;; i still think i hate ido but will try with some things turned off
@@ -31,3 +29,9 @@
 
 ;; shift-selection
 (setq shift-select-mode t)
+
+;; theme
+(load-theme 'wombat t)
+
+;; ec server
+(server-start)
