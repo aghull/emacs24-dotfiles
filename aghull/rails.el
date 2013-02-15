@@ -1,6 +1,4 @@
 (starter-kit-load "ruby")
-(add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
 
 (require 'rvm)
 (rvm-use-default)
@@ -8,14 +6,13 @@
 ;; rinari
 (require 'rinari)
 
-;; nxhtml
-(load (concat starter-kit-dir "vendor/nxhtml/autostart.el"))
+;; rhtml
+(require 'rhtml-mode)
+(add-to-list 'auto-mode-alist '("\\.rhtml\\'" . rhtml-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\.erb\\'" . rhtml-mode))
+(add-to-list 'auto-mode-alist '("\\.ejs\\'" . rhtml-mode))
 
-;; html+erb
-(add-to-list 'load-path (concat starter-kit-dir "vendor/nxhtml/util"))
-(require 'mumamo-fun)
-(setq mumamo-chunk-coloring 'submode-colored
-      mumamo-background-colors nil)
-(add-to-list 'auto-mode-alist '("\\.rhtml\\'" . eruby-html-mumamo))
-(add-to-list 'auto-mode-alist '("\\.html\\.erb\\'" . eruby-html-mumamo))
-
+;; restore transpose-lines key
+(eval-after-load 'ruby-mode
+  '(progn
+     (define-key ruby-mode-map (kbd "C-x C-t") 'transpose-lines)))
