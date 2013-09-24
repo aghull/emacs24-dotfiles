@@ -7,6 +7,10 @@
 (require 'auto-complete)
 (global-auto-complete-mode t)
 
+;; do not make flymake files in situ
+(setq flymake-run-in-place nil)
+(setq temporary-file-directory "~/.emacs.d/tmp/")
+
 ;; i still think i hate ido but will try with some things turned off
 (setq ido-use-filename-at-point nil)
 
@@ -33,6 +37,9 @@
 (setq shift-select-mode t)
 (delete-selection-mode 1)
 (global-set-key (kbd "M-/") 'dabbrev-expand)
+(add-hook 'html-mode-hook 'turn-off-auto-fill)
+(add-hook 'rhtml-mode-hook 'turn-off-auto-fill)
+
 
 (require 'revbufs)
 (global-set-key (kbd "s-r") 'revbufs)

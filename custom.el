@@ -15,6 +15,7 @@
  '(recentf-max-menu-items 50)
  '(recentf-max-saved-items 500)
  '(recentf-mode t)
+ '(safe-local-variable-values (quote ((eval progn (c-set-offset (quote arglist-close) 0) (c-set-offset (quote arglist-cont-nonempty) (quote +)) (c-set-offset (quote arglist-intro) (quote +))) (eval progn (c-set-offset (quote arglist-close) 0) (c-set-offset (quote arglist-intro) (quote +))) (indent-tabs-mode quote t) (js-indent-level . 2) (sgml-basic-offset . 2) (default-tab-width . 2) (sgml-basic-offset . 4) (encoding . utf-8) (js-indent-level . 4) (default-tab-width . 4) (ruby-compilation-executable . "ruby") (ruby-compilation-executable . "ruby1.8") (ruby-compilation-executable . "ruby1.9") (ruby-compilation-executable . "rbx") (ruby-compilation-executable . "jruby"))))
  '(visible-bell nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
