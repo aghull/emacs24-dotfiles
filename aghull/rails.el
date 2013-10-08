@@ -15,4 +15,6 @@
 ;; restore transpose-lines key
 (eval-after-load 'ruby-mode
   '(progn
-     (define-key ruby-mode-map (kbd "C-x C-t") 'transpose-lines)))
+     (define-key ruby-mode-map (kbd "C-x C-t") 'transpose-lines)
+     (define-key ruby-mode-map [\C-\s-left] 'ruby-beginning-of-block)
+     (define-key ruby-mode-map [\C-\s-right] 'ruby-end-of-block)))
