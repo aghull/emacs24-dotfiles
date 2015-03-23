@@ -3,12 +3,15 @@
 (let ((default-directory "~/.emacs.d/vendor/")) (normal-top-level-add-subdirs-to-load-path))
 
 ;; debug/editing help
-(require 'flymake-cursor)
+;;(require 'flymake-cursor)
+(setq flymake-allowed-file-name-masks nil) ;; turn off flymake
+
 (require 'auto-complete)
 (global-auto-complete-mode t)
 
 ;; do not make flymake files in situ
-(setq flymake-run-in-place nil)
+;;(setq flymake-run-in-place nil)
+(add-hook 'after-init-hook 'global-flycheck-mode)
 (setq temporary-file-directory "~/.emacs.d/tmp/")
 
 ;; i still think i hate ido but will try with some things turned off
@@ -35,7 +38,7 @@
 (define-key global-map [\C-\S-tab] 'indent-rigidly-back)
 (defun indent-rigidly-back () (interactive) (indent-rigidly (region-beginning) (region-end) -1))
 (setq shift-select-mode t)
-(delete-selection-mode 1)
+(delete-selection-mode)
 (global-set-key (kbd "M-/") 'dabbrev-expand)
 (add-hook 'html-mode-hook 'turn-off-auto-fill)
 (add-hook 'rhtml-mode-hook 'turn-off-auto-fill)
@@ -54,3 +57,5 @@
 
 ;; mac osx shell
 (when (memq window-system '(mac ns)) (exec-path-from-shell-initialize))
+
+(setq search-whitespace-regexp nil)

@@ -11,6 +11,7 @@
 (add-to-list 'auto-mode-alist '("\\.rhtml\\'" . rhtml-mode))
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . rhtml-mode))
 (add-to-list 'auto-mode-alist '("\\.ejs\\'" . rhtml-mode))
+(add-to-list 'auto-mode-alist '("\\.jbuilder\\'" . ruby-mode))
 
 ;; restore transpose-lines key
 (eval-after-load 'ruby-mode
