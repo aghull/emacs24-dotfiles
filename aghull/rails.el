@@ -4,7 +4,7 @@
 (rvm-use-default)
 
 ;; rinari
-(require 'rinari)
+;;(require 'rinari)
 
 ;; rhtml
 (require 'rhtml-mode)
