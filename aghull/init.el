@@ -2,6 +2,10 @@
 (starter-kit-load "org")
 (let ((default-directory "~/.emacs.d/vendor/")) (normal-top-level-add-subdirs-to-load-path))
 
+(dolist (package '(auto-complete popup col-highlight vline crosshairs exec-path-from-shell flycheck let-alist pkg-info epl dash dash flymake-cursor flymake flymake-jshint flymake-jslint flymake-easy flymake-phpcs flymake flymake-ruby flymake-easy flymake-sass flymake-easy hl-line+ js2-mode jsx-mode jump inflections findr let-alist magit markdown-mode maxframe php-mode pkg-info epl dash popup rainbow-mode rvm vline web-mode yaml-mode yasnippet-bundle zenburn-theme zencoding-mode))
+  (unless (package-installed-p package)
+    (package-install package)))
+
 ;; debug/editing help
 ;;(require 'flymake-cursor)
 (setq flymake-allowed-file-name-masks nil) ;; turn off flymake
