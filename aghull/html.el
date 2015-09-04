@@ -7,10 +7,7 @@
   :command ("jsxhint" source)
   :error-patterns
   ((error line-start (1+ nonl) ": line " line ", col " column ", " (message) line-end))
-  :modes (web-mode))
-;; (add-hook 'jsx-mode-hook (lambda ()
-;;                           (flycheck-select-checker 'jsxhint-checker)
-;;                           (flycheck-mode)))
+  :modes (web-mode js-mode js2-mode))
 
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-css-indent-offset 2)

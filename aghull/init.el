@@ -42,11 +42,13 @@
 (define-key global-map [\C-\S-tab] 'indent-rigidly-back)
 (defun indent-rigidly-back () (interactive) (indent-rigidly (region-beginning) (region-end) -1))
 (setq shift-select-mode t)
-(delete-selection-mode 1)
 (add-hook 'before-save-hook 'whitespace-cleanup)
 (global-set-key (kbd "M-/") 'dabbrev-expand)
+
 (add-hook 'html-mode-hook 'turn-off-auto-fill)
 (add-hook 'rhtml-mode-hook 'turn-off-auto-fill)
+(defun open-line-at-start () (interactive) (beginning-of-line) (open-line 1) (indent-according-to-mode))
+(global-set-key (kbd "C-S-o") 'open-line-at-start)
 
 
 (require 'revbufs)
@@ -57,10 +59,11 @@
 (global-hl-line-mode)
 
 ;; ec server
-(server-start)
+(setq ns-pop-up-frames nil)
 (desktop-save-mode 1)
 
 ;; mac osx shell
 (when (memq window-system '(mac ns)) (exec-path-from-shell-initialize))
 
 (setq search-whitespace-regexp nil)
+
