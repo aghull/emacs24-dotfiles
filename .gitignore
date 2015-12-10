@@ -51,3 +51,5 @@ secret.org
 .emacs.desktop*
 .*~
 agent/*
+
+tmp

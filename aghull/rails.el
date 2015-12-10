@@ -3,9 +3,6 @@
 (require 'rvm)
 (rvm-use-default)
 
-;; rinari
-;;(require 'rinari)
-
 ;; rhtml
 (require 'rhtml-mode)
 (add-to-list 'auto-mode-alist '("\\.rhtml\\'" . rhtml-mode))

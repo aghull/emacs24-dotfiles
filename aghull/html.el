@@ -1,26 +1,19 @@
 (starter-kit-load "js")
 
-(require 'flycheck)
-(flycheck-define-checker jsxhint-checker
-  "A JSX syntax and style checker based on JSXHint."
-
-  :command ("jsxhint" source)
-  :error-patterns
-  ((error line-start (1+ nonl) ": line " line ", col " column ", " (message) line-end))
-  :modes (web-mode js-mode js2-mode))
-
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-css-indent-offset 2)
 (setq web-mode-code-indent-offset 2)
 (setq web-mode-script-padding 2)
 (setq web-mode-enable-auto-quoting nil)
 
-(defun jsx-mode ()
-  (when (and (stringp buffer-file-name)
-             (string-match "\\.jsx\\'" buffer-file-name))
-    (flycheck-select-checker 'jsxhint-checker)
-    (flycheck-mode)))
+(require 'flycheck)
 
-(add-hook 'find-file-hook 'jsx-mode)
+(flycheck-add-mode 'javascript-eslint 'web-mode)
+
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
+;;(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode)) - hangs???
 (add-to-list 'auto-mode-alist '(".html" . web-mode))
+;;(add-to-list 'auto-mode-alist '("\\.json5?\\'" . js-mode))
+
+(add-hook 'web-mode-hook
+          (lambda () (modify-syntax-entry ?_ "_")))
