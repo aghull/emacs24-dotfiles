@@ -15,6 +15,7 @@
 
 (setq ido-use-filename-at-point nil)
 (setq ffip-prefer-ido-mode t)
+(setq ffip-prune-patterns '(*/.git/* */.svn/* */.cvs/* */.bzr/* */.hg/* *.log */bin/* */.DS_Store/* */tags */TAGS */GTAGS */GPATH */GRTAGS */cscope.files */.npm/* */.tmp/* */.sass-cache/* */.idea/* *min.js *min.css */node_modules/* */bower_components/* *.png *.jpg *.jpeg *.gif *.bmp *.tiff *.ico *.doc *.docx *.pdf *.obj *.o *.a *.dylib *.lib *.d *.dll *.exe */.metadata* */.gradle/* *.class *.war *.jar *flymake */\#*\# .\#* *.swp *~ *.elc */.cask/* *.pyc */vendor/* */tmp/*))
 
 ;; always popup vertical window split
 (setq split-height-threshold 0)
@@ -51,6 +52,7 @@
 (defun open-line-at-start () (interactive) (beginning-of-line) (open-line 1) (indent-according-to-mode))
 (global-set-key (kbd "C-S-o") 'open-line-at-start)
 
+(global-set-key (kbd "s-o") 'ffip)
 
 (require 'revbufs)
 (global-set-key (kbd "s-r") 'revbufs)
