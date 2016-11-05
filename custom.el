@@ -16,7 +16,7 @@
    (quote
     ("86b66cac474875ca4b952609a2b57f9d25528dce25ff865d2cbb64e9af4dc5fe" "585e4a710229f95eff8deccb921218fbde1fb2e9c6e28ee59f7066fe05115367" "71b172ea4aad108801421cc5251edb6c792f3adbaecfa1c52e94e3d99634dee7" default)))
  '(dabbrev-abbrev-skip-leading-regexp ":")
- '(delete-selection-mode nil)
+ '(delete-selection-mode 1)
  '(fill-column 140)
  '(js-indent-level 2)
  '(recentf-max-menu-items 50)
@@ -44,8 +44,6 @@
      (sgml-basic-offset . 4)
      (default-tab-width . 4)
      (ruby-compilation-executable . "ruby")
-     (ruby-compilation-executable . "ruby1.8")
-     (ruby-compilation-executable . "ruby1.9")
      (ruby-compilation-executable . "rbx")
      (ruby-compilation-executable . "jruby"))))
  '(visible-bell nil))
