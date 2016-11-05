@@ -123,7 +123,7 @@ to your configuration."
          (string-match "\\(.*?\\)\.\\(org\\(\\.el\\)?\\|el\\)\\(\\.gpg\\)?$" name)
          (match-string 1 name)))
   (let ((elisp-dir (expand-file-name "src" starter-kit-dir))
-        (user-dir (expand-file-name user-login-name starter-kit-dir)))
+        (user-dir (expand-file-name "aghull" starter-kit-dir)))
     ;; add the src directory to the load path
     (add-to-list 'load-path elisp-dir)
     ;; load specific files
@@ -133,7 +133,7 @@ to your configuration."
     ;; load system-specific config
     (sk-load system-name)
     ;; load user-specific config
-    (sk-load user-login-name)
+    (sk-load "aghull")
     ;; load any files in the user's directory
     (when (file-exists-p user-dir)
       (add-to-list 'load-path user-dir)
