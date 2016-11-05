@@ -2,7 +2,7 @@
 (starter-kit-load "org")
 (let ((default-directory "~/.emacs.d/vendor/")) (normal-top-level-add-subdirs-to-load-path))
 
-(dolist (package '(auto-complete popup col-highlight vline crosshairs exec-path-from-shell flycheck let-alist pkg-info epl dash hl-line+ haml-mode jump inflections findr let-alist magit markdown-mode maxframe php-mode pkg-info epl dash popup python-mode rainbow-mode rvm ruby-hash-syntax vline web-mode yaml-mode yasnippet-bundle zenburn-theme zencoding-mode))
+(dolist (package '(auto-complete popup col-highlight vline crosshairs exec-path-from-shell flycheck let-alist pkg-info epl dash hl-line+ haml-mode jump inflections findr let-alist magit markdown-mode maxframe php-mode pkg-info epl dash popup python-mode rainbow-mode rvm ruby-hash-syntax vline web-mode yaml-mode yasnippet-bundle zenburn-theme zencoding-mode find-file-in-project))
   (unless (package-installed-p package)
     (package-install package)))
 
@@ -14,6 +14,7 @@
 (setq temporary-file-directory "~/.emacs.d/tmp/")
 
 (setq ido-use-filename-at-point nil)
+(setq ffip-prefer-ido-mode t)
 
 ;; always popup vertical window split
 (setq split-height-threshold 0)
