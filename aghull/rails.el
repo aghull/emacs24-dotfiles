@@ -1,3 +1,5 @@
+
+
 (require 'rvm)
 (rvm-use-default)
 
@@ -18,9 +20,15 @@
 
 (eval-after-load 'ruby-mode
   '(progn
+     (ignore-errors (require 'ruby-compilation))
+     (setq ruby-use-encoding-map nil)
      (define-key ruby-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
      (define-key ruby-mode-map (kbd "C-M-h") 'backward-kill-word)
      (define-key ruby-mode-map (kbd "C-c l") "lambda")
      (define-key ruby-mode-map (kbd "C-x C-t") 'transpose-lines) ;; restore transpose-lines key
      (define-key ruby-mode-map [\C-\s-left] 'ruby-beginning-of-block)
      (define-key ruby-mode-map [\C-\s-right] 'ruby-end-of-block)))
+
+(setq rinari-major-modes
+      (list 'mumamo-after-change-major-mode-hook 'dired-mode-hook 'ruby-mode-hook
+            'css-mode-hook 'yaml-mode-hook 'javascript-mode-hook))

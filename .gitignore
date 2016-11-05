@@ -9,6 +9,8 @@ places
 .DS_Store
 tramp
 ac-comphist.dat
+ido.last
+recentf
 
 ## directories
 backups/*
@@ -25,7 +27,6 @@ url/*
 
 ## exported and encrypted files
 *gpg
-*el
 *elc
 *html
 *tex
