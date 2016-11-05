@@ -16,7 +16,6 @@
 (add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
 
 (add-to-list 'completion-ignored-extensions ".rbc")
-(add-hook 'ruby-mode-hook 'robe-mode)
 
 (eval-after-load 'ruby-mode
   '(progn
