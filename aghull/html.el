@@ -5,12 +5,21 @@
 (setq web-mode-enable-auto-quoting nil)
 
 (require 'flycheck)
+(require 'rainbow-mode)
+(require 'yaml-mode)
 
 (flycheck-add-mode 'javascript-eslint 'web-mode)
 
+(add-to-list 'auto-mode-alist '("COMMIT_EDITMSG$" . diff-mode))
+(add-to-list 'auto-mode-alist '("\\.css$" . css-mode))
+(add-to-list 'auto-mode-alist '("\\.scss$" . css-mode))
+(add-to-list 'auto-mode-alist '("\\.sass$" . css-mode))
+(add-to-list 'auto-mode-alist '("\\.ya?ml$" . yaml-mode))
+(add-hook 'css-mode-hook 'rainbow-mode)
+;; (add-to-list 'auto-mode-alist '("\\.xml$" . nxml-mode))
 (add-to-list 'auto-mode-alist '("\\.less\\'" . css-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\(on\\)\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 ;;(add-to-list 'auto-mode-alist '("\\.json5?\\'" . js-mode))
 

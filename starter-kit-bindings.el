@@ -21,6 +21,7 @@
 (global-set-key (kbd "C-c r") 'revert-buffer)
 (global-set-key (kbd "M-`") 'file-cache-minibuffer-complete)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "s-o") 'find-file-in-project)
 (global-set-key (kbd "C-x f") 'recentf-ido-find-file)
 
 ;;(windmove-default-keybindings) ;; Shift+direction

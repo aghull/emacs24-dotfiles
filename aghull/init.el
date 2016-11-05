@@ -2,7 +2,43 @@
 (starter-kit-load "org")
 (let ((default-directory "~/.emacs.d/vendor/")) (normal-top-level-add-subdirs-to-load-path))
 
-(dolist (package '(auto-complete popup col-highlight vline crosshairs exec-path-from-shell flycheck let-alist pkg-info epl dash hl-line+ haml-mode jump inflections findr let-alist magit markdown-mode maxframe php-mode pkg-info epl dash popup python-mode rainbow-mode rvm ruby-hash-syntax vline web-mode yaml-mode yasnippet-bundle zenburn-theme zencoding-mode find-file-in-project))
+(dolist (package '(auto-complete
+                   popup
+                   col-highlight
+                   vline
+                   crosshairs
+                   exec-path-from-shell
+                   flycheck
+                   let-alist
+                   pkg-info
+                   epl
+                   dash
+                   hl-line+
+                   haml-mode
+                   jump
+                   inflections
+                   findr
+                   let-alist
+                   magit
+                   markdown-mode
+                   maxframe
+                   php-mode
+                   pkg-info
+                   epl
+                   dash
+                   popup
+                   python-mode
+                   rainbow-mode
+                   rvm
+                   ruby-hash-syntax
+                   vline
+                   web-mode
+                   yaml-mode
+                   yasnippet-bundle
+                   zenburn-theme
+                   zencoding-mode
+                   find-file-in-project
+                   git-gutter))
   (unless (package-installed-p package)
     (package-install package)))
 
@@ -70,3 +106,4 @@
 
 (setq search-whitespace-regexp nil)
 (setq create-lockfiles nil) ;; just to avoid watch issues - sigh
+(global-git-gutter-mode)
