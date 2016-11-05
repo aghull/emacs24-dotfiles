@@ -13,7 +13,6 @@
 (setq flycheck-highlighting-mode 'lines)
 (setq temporary-file-directory "~/.emacs.d/tmp/")
 
-;; i still think i hate ido but will try with some things turned off
 (setq ido-use-filename-at-point nil)
 
 ;; always popup vertical window split
