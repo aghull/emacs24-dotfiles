@@ -31,6 +31,7 @@
                    rainbow-mode
                    rvm
                    ruby-hash-syntax
+                   typescript-mode
                    vline
                    web-mode
                    yaml-mode
@@ -74,7 +75,6 @@
 (define-key global-map [\C-\S-tab] 'indent-rigidly-back)
 (defun indent-rigidly-back () (interactive) (indent-rigidly (region-beginning) (region-end) -1))
 (setq shift-select-mode t)
-(add-hook 'before-save-hook 'whitespace-cleanup)
 (defadvice whitespace-cleanup (around whitespace-cleanup-indent-tab
                                       activate)
   "Fix whitespace-cleanup indent-tabs-mode bug"
@@ -100,6 +100,7 @@
 ;; ec server
 (setq ns-pop-up-frames nil)
 (desktop-save-mode 1)
+(setq desktop-restore-eager 200)
 
 ;; mac osx shell
 (when (memq window-system '(mac ns)) (exec-path-from-shell-initialize))
